@@ -1,0 +1,117 @@
+$color-btn: #36725b;
+$color-box: #183d3d;
+$color-back: #93b1a6;
+$color-input: #5c8374;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: $color-back;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+        sans-serif;
+    text-align: center;
+
+    .title {
+        color: #ffff;
+        font-weight: 900;
+        margin: 30px auto;
+    }
+
+    .boxs {
+        background: $color-box;
+        width: 60%;
+        border: none;
+        border-radius: 10px;
+        padding: 20px;
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no haya suficiente espacio */
+
+            .l,
+            .r {
+                .input-container {
+                    position: relative;
+                    margin-bottom: 20px;
+                    width: 100%;
+
+                    input.with-icon {
+                        padding-left: 40px;
+                        width: 100%;
+                        box-sizing: border-box;
+                        text-align: start;
+                    }
+
+                    i {
+                        position: absolute;
+                        left: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 20px;
+                        color: #f3f3f3;
+                    }
+
+                    input {
+                        width: 100%;
+                        height: 50px;
+                        padding: 10px;
+                        border: none;
+                        border-radius: 10px;
+                        font-size: 16px;
+                        outline: none;
+                        background: $color-input;
+                        color: #ffff;
+
+                        &::placeholder {
+                            color: #dedede;
+                        }
+                    }
+                }
+            }
+
+            .tyc {
+                margin-left: 5px;
+                color: #ffff;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        #btn_register {
+            background-color: $color-btn;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 20px auto 40px auto;
+            display: block;
+            width: 50%;
+
+            &:hover {
+                background-color: darken($color-btn, 10%);
+            }
+        }
+
+        #logIn {
+            color: #f3f3f3;
+            font-size: 15px;
+            text-align: end;
+            margin: 15px 0 -5px 0;
+
+            a {
+                text-decoration: none;
+                color: #ffff;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="boxs">
+        <h1 class="title">INICIO DE SESIÓN</h1>
+        <form (ngSubmit)="onSubmit()" class="login">
+            <div class="input-container">
+                <input type="email" name="correo" placeholder="Correo electrónico" class="with-icon" required
+                    [(ngModel)]="correo">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="input-container">
+                <input type="password" name="contrasena" placeholder="Contraseña" class="with-icon" required
+                    [(ngModel)]="contrasena">
+                <i class="fas fa-lock"></i>
+            </div>
+            <p id="passFgt">¿No recuerdas la contraseña? <a><b>Recuperar</b></a></p>
+            <input type="submit" value="Ingresar" id="btn_login">
+            <p id="logOut">¿No tienes cuenta? <a [routerLink]="['/register']"><b>Registrate</b></a></p>
+        </form>
+    </div>
+</div>

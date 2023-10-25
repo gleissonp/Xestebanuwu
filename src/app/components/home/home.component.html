@@ -1,0 +1,29 @@
+<layout>
+    <div class="current-folder" *ngIf="currentFolderName">
+        <p id="folder">{{ currentFolderName }}</p>
+    </div>
+    <main class="file-list">
+        <div class="file-header">
+            <span>Nombre</span>
+            <span>Fecha de Creación</span>
+            <span>Opciones</span>
+        </div>
+        <div *ngFor="let item of filesAndFolders" class="file">
+            <div class="file-info">
+                <i class="fas" [ngClass]="isFile(item) ? 'fa-file' : 'fa-folder'"></i>
+                <a href="#" *ngIf="isFile(item); else folderLink">
+                    {{ item.name }}
+                </a>
+                <ng-template #folderLink>
+                    <a href="#" (click)="openFolder(item)">
+                        {{ item }}
+                    </a>
+                </ng-template>
+            </div>
+            <div class="file-options">
+                <i class="fas fa-trash" id="delete" (click)="delete(item.id)"></i>
+                <i class="fas fa-share-alt" id="share" (click)="share(item.id)"></i>
+            </div>
+        </div>
+    </main>
+</layout>

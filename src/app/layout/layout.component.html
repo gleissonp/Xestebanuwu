@@ -1,0 +1,41 @@
+<section class="container">
+    <header>
+        <div class="logo">Drive UPB</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar..." [(ngModel)]="searchTerm" (input)="onSearchChange()">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="user-info">
+            <div class="user-avatar">
+                <img src="" width="50"
+                    alt="User Avatar">
+            </div>
+            <div class="user-options">
+                <p>{{ authService.getCorreo() }}</p>
+                <div class="options-menu">
+                    <ul>
+                        <li><i class="fas fa-user-edit"></i> Editar perfil</li>
+                        <li (click)="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <aside class="sidebar">
+            <a class="green-btn" [routerLink]="['/file']"><i class="fas fa-plus"></i> Agregar archivo</a>
+
+            <div class="menu-options">
+                <ul>
+                    <li><a [routerLink]="['/']"><i class="fas fa-file"></i> Mis archivos</a></li>
+                    <li><a [routerLink]="['/removed']"><i class="fas fa-trash"></i> Papelera</a></li>
+                    <li><a [routerLink]="['/']"><i class="fas fa-share-alt"></i> Archivos compartidos</a></li>
+                </ul>
+            </div>
+        </aside>
+        <main class="file-list">
+            <ng-content></ng-content>
+        </main>
+    </div>
+</section>
