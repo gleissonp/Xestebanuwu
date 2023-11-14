@@ -16,6 +16,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { RemovedComponent } from './components/removed/removed.component';
 import { AuthGuard } from './services/authGuard.service';
 import { SearchService } from './services/search.service';
+import { FolderComponent } from './components/folder/folder.component';
 
 
 
@@ -27,7 +28,8 @@ import { SearchService } from './services/search.service';
     HomeComponent,
     FileComponent,
     LayoutComponent,
-    RemovedComponent
+    RemovedComponent,
+    FolderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://distribuidos1.bucaramanga.upb.edu.co:27017',
+  apiUrl: 'https://localhost:7157',
 };

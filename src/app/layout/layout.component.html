@@ -24,12 +24,14 @@
     </header>
     <div class="content">
         <aside class="sidebar">
+            <a class="green-btn" [routerLink]="['/folder']"><i class="fas fa-plus"></i> Crear Carpeta</a>
             <a class="green-btn" [routerLink]="['/file']"><i class="fas fa-plus"></i> Agregar archivo</a>
+            
 
             <div class="menu-options">
                 <ul>
                     <li><a [routerLink]="['/']"><i class="fas fa-file"></i> Mis archivos</a></li>
-                    <li><a [routerLink]="['/removed']"><i class="fas fa-trash"></i> Papelera</a></li>
+                    
                     <li><a [routerLink]="['/']"><i class="fas fa-share-alt"></i> Archivos compartidos</a></li>
                 </ul>
             </div>

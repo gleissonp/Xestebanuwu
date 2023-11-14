@@ -73,6 +73,7 @@ export class HomeComponent implements OnInit {
     this.fileService.listFilesInFolder(folderName).subscribe(
       (filesData: any[]) => {
         // Filtra las carpetas y archivos para excluir la carpeta actual del listado
+        console.log("click");
         this.filesAndFolders = filesData.filter(item => this.isFile(item));
         this.currentFolderName = folderName; // Actualiza el nombre de la carpeta actual
       },

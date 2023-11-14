@@ -14,7 +14,7 @@ export class UserService {
     constructor(private http: HttpClient, private authService: AuthService) { }
 
     registerUser(data: any): Observable<any> {
-        return this.http.post<any>(`${this.apiUrl}/register`, data);
+        return this.http.post<any>(`${this.apiUrl}/api/micontrolador`, data);
     }
 
     loginAndRedirect(correo: string, contrasena: string): Observable<any> {
@@ -23,7 +23,7 @@ export class UserService {
             contrasena: contrasena
         };
 
-        return this.http.post<any>(`${this.apiUrl}/login`, data);
+        return this.http.post<any>(`${this.apiUrl}/api/login`, data);
     }
 
     login(correo: string, contrasena: string): Observable<any> {
@@ -32,7 +32,7 @@ export class UserService {
             contrasena: contrasena
         };
 
-        return this.http.post<any>(`${this.apiUrl}/login`, data).pipe(
+        return this.http.post<any>(`${this.apiUrl}/api/login`, data).pipe(
             tap(response => {
                 if (response && response.token) {
                     this.authService.setCredentials(response.correo, response.token);

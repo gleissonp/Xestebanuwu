@@ -1,0 +1,14 @@
+<layout>
+    <div class="container">
+        <h2>Subir Archivo</h2>
+        <form (ngSubmit)="onSubmit()" #fileForm="ngForm">
+            <div class="form-group">
+                <label for="folderName">Nombre de la Carpeta:</label>
+                <input type="text" id="folderName" name="folderName" [(ngModel)]="folderName" class="form-control">
+            </div>
+            
+            
+            <button type="submit" class="btn btn-primary" [disabled]="!fileForm.form.valid">Crear carpeta</button>
+        </form>
+    </div>
+</layout>

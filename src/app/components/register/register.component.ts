@@ -46,8 +46,7 @@ export class RegisterComponent {
       }
 
       const registrationData = {
-        nombres: name,
-        apellidos: lastName,
+        
         correo: email,
         contrasena: password
       };

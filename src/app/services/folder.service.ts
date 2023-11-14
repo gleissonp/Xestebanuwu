@@ -8,8 +8,8 @@ import { environment } from 'src/environments/environment';
 @Injectable({
     providedIn: 'root'
 })
-export class FileService {
-    private apiUrl = `${environment.apiUrl}/file/`;
+export class FolderService {
+    private apiUrl = `${environment.apiUrl}/folder/`;
 
 
     constructor(private http: HttpClient, private authService: AuthService) { }
@@ -54,28 +54,19 @@ export class FileService {
         return this.http.get<any>(`${this.apiUrl}download/${pk}`, options);
     }
 
-    upload(file: string, folderName: string, fileName: string): Observable<any> {
+    uploadFile( folderName: string): Observable<any> {
+      
+      const data = {
+        folderName: folderName
+    };
         
-        const data = {
-            
-            folderName:folderName,
-            fileName:fileName,
-            fileData:file,
-            
 
-            
-        };
-        console.log(file);
-        
         const headers = this.getHeaders();
         const options = { headers: headers };
-        
 
-        
-
-        return this.http.post<any>(`${this.apiUrl}upload`, data,options);
+        return this.http.post<any>(`${this.apiUrl}folder`, data, options);
     }
-/*
+
     listFilesInFolder(folderName: string): Observable<any[]> {
         const headers = this.getHeaders();
         const options = { headers: headers };
@@ -83,30 +74,9 @@ export class FileService {
         const body = {
             folder: folderName
         };
-        console.log("click dentro file.service");
 
         // Realiza la solicitud POST al backend para obtener los archivos y carpetas en la carpeta especificada
-        return this.http.get<any[]>(`${this.apiUrl}listFilesInDirectory/`, body, options);
+        return this.http.post<any[]>(`${this.apiUrl}listFilesInDirectory/`, body, options);
     }
-    */
-
-    listFilesInFolder(folderName: string): Observable<any[]> {
-        const headers = this.getHeaders();
-        const options = { headers: headers };
-      
-        const url = `${this.apiUrl}listFilesInDirectory/${folderName}`;
-      
-        console.log("click dentro file.service");
-        console.log(options.headers.get('Authorization'));
-        console.log(options.headers.get('Authorization'));
-
-        console.log(options.headers.get('Authorization'));
-        console.log(options.headers.get('Authorization'));
-
-
-      
-        return this.http.get<any[]>(url, options);
-      }
-      
 
 }

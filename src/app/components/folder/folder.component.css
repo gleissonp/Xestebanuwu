@@ -47,7 +47,7 @@ h2 {
 }
 
 .btn-primary {
-    background-color: #5aa4cc;
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -60,7 +60,7 @@ h2 {
     transition: background-color 0.3s ease;
 
     &:hover {
-        background-color: #5aa4cc;
+        background-color: #45a049;
     }
 
     &:disabled {
